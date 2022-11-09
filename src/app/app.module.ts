@@ -10,13 +10,13 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatCardModule } from '@angular/material/card';
 
 import { AppComponent } from './app.component';
-import { ProductsListComponent } from './components/products-list/products-list.component';
+import { ProductsListComponent } from './components/products/products-list/products-list.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
-import { ProductComponent } from './components/product/product.component';
+import { ProductItemComponent } from './components/products/product/product-item.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
-import { ProductShoppingcartComponent } from './components/product-shoppingcart/product-shoppingcart.component';
+import { ProductShoppingcartComponent } from './components/products/product-shoppingcart/product-shoppingcart.component';
 
 @NgModule({
   imports: [
@@ -47,7 +47,7 @@ import { ProductShoppingcartComponent } from './components/product-shoppingcart/
     ShoppingCartComponent,
     PageNotFoundComponent,
     AboutusComponent,
-    ProductComponent,
+    ProductItemComponent,
     ContactusComponent,
     ProductShoppingcartComponent,
   ],
