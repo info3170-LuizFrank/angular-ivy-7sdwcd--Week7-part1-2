@@ -17,6 +17,7 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { ProductItemComponent } from './components/products/product/product-item.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { ProductShoppingcartComponent } from './components/products/product-shoppingcart/product-shoppingcart.component';
+import { ProductDetailsComponent } from './components/products/product-details/product-details.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { ProductShoppingcartComponent } from './components/products/product-shop
       { path: 'prods', redirectTo: '/products', pathMatch: 'full' },
       { path: '', redirectTo: '/products', pathMatch: 'full' },
       { path: 'products/:id', redirectTo: '/products', pathMatch: 'prefix' },
+      { path: 'products/:productId/:rate', component: ProductDetailsComponent },
       { path: '**', component: PageNotFoundComponent },
     ]),
     FormsModule,
@@ -50,6 +52,7 @@ import { ProductShoppingcartComponent } from './components/products/product-shop
     ProductItemComponent,
     ContactusComponent,
     ProductShoppingcartComponent,
+    ProductDetailsComponent,
   ],
   bootstrap: [AppComponent],
 })

@@ -7,7 +7,7 @@
   <mat-card-content class="product-description">
     <a
       [title]="product.name + ' details'"
-      [routerLink]="['/products', product.id]"
+      [routerLink]="['/products', product.id, product.rate]"
     >
       {{ product.name.substring(0, 100) }}...
     </a>
