@@ -19,6 +19,7 @@ export class ProductsService {
         altPicture: 'Bonsai tree in pottery',
         price: 172.99,
         quantity: 10,
+        rate: 4.5,
       },
       {
         id: 2,
@@ -29,6 +30,7 @@ export class ProductsService {
         altPicture: 'Bonsai tree in pottery again',
         price: 76.99,
         quantity: 10,
+        rate: 3.5,
       },
     ];
   }
