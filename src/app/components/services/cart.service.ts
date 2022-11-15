@@ -11,8 +11,7 @@ import { CartItem } from '../models/cart-item';
 export class CartService {
   private _subscriptionObservable: Observable<ShoppingCart>;
   private _subscribers: Array<Observer<ShoppingCart>> = new Array<
-    Observer<ShoppingCart>
-  >();
+    Observer<ShoppingCart>>();
   private _products: Product[];
   //TODO: implement storage
 
@@ -47,7 +46,7 @@ export class CartService {
     item.quantity += quantity;
     cart.items = cart.items.filter((cartItem) => cartItem.quantity > 0);
 
-    //this.calculateCart(cart);
+    this.calculateCart(cart);
     //this.save(cart);
     this.dispatch(cart);
   }

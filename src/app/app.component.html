@@ -34,13 +34,20 @@
       mat-icon-button
       class="example-icon"
       aria-label="Shopping Cart Icon"
+      routerLink="cart"
     >
       <mat-icon
-        matBadge="0"
+        matBadge="{{ itemCount }}"
         matBadgeColor="warn"
         matBadgePosition="above before"
         >shopping_cart</mat-icon
       >
+      <mat-icon
+        matBadge="{{ countUniqueProducts }}"
+        matBadgeColor="warn"
+        matBadgePosition="above after"
+        >token</mat-icon
+    >
     </button>
   </mat-toolbar>
 </p>

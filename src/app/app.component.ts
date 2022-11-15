@@ -22,6 +22,15 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private _cartSubscription: Subscription;
 
+
+  // Another subscription in the app.component.ts controller that gets the sum of
+  // products without considering their quantity. This will count only how many
+  // different products are in the shopping cart.
+  public countUniqueProducts: number;
+  // subscription 2 from the observable ShoppingCart that count the sum 
+  // of different products
+  private _countUniqueProducts: Subscription;
+
   public routeFound: boolean = false;
   private _event$;
   private _routes;
@@ -52,6 +61,17 @@ export class AppComponent implements OnInit, OnDestroy {
         .map((x) => x.quantity)
         .reduce((p, n) => p + n, 0);
     });
+
+    // New subscription for countUniqueProducts
+    // Only the unique products
+    this._countUniqueProducts = this.cart.subscribe((cart) => {
+      let productIds = [];
+      productIds = cart.items.map((x) => x.productId);
+      let uniqueProductIds = [...new Set(productIds)];
+      // Gets the number of unique products
+      this.countUniqueProducts = uniqueProductIds.length;
+    });
+
   }
 
   public ngOnDestroy(): void {
