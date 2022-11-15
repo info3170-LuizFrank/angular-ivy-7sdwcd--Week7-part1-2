@@ -31,7 +31,6 @@ import { ProductDetailsComponent } from './components/products/product-details/p
       { path: 'products-list', redirectTo: '/products', pathMatch: 'full' },
       { path: 'prods', redirectTo: '/products', pathMatch: 'full' },
       { path: '', redirectTo: '/products', pathMatch: 'full' },
-      { path: 'products/:id', redirectTo: '/products', pathMatch: 'prefix' },
       { path: 'products/:productId/:rate', component: ProductDetailsComponent },
       { path: '**', component: PageNotFoundComponent },
     ]),
