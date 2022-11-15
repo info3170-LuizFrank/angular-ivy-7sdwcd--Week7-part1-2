@@ -14,7 +14,7 @@ import { ProductsListComponent } from './components/products/products-list/produ
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
-import { ProductItemComponent } from './components/products/product/product-item.component';
+import { ProductItemComponent } from './components/products/product-item/product-item.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { ProductShoppingcartComponent } from './components/products/product-shoppingcart/product-shoppingcart.component';
 import { ProductDetailsComponent } from './components/products/product-details/product-details.component';
