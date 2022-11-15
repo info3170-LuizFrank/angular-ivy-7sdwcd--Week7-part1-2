@@ -42,12 +42,6 @@
         matBadgePosition="above before"
         >shopping_cart</mat-icon
       >
-      <mat-icon
-        matBadge="{{ countUniqueProducts }}"
-        matBadgeColor="warn"
-        matBadgePosition="above after"
-        >token</mat-icon
-    >
     </button>
   </mat-toolbar>
 </p>
@@ -85,4 +79,9 @@
     Contact Us
   </a>
 </nav>
+<p>
+  Number of different products in the shopping cart: {{countUniqueProducts}}
+</p>
+<p>
+</p>
 <router-outlet></router-outlet>
