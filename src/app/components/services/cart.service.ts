@@ -8,7 +8,7 @@ import { LocalStorageService } from './storage.service';
 
 // CART_KEY is a constant we define at this class to hold the key in the local storage
 // where the cart will be
-const CART_KEY = 'cart'; 
+const CART_KEY = 'cart';
 
 @Injectable({
   providedIn: 'root',
@@ -16,26 +16,28 @@ const CART_KEY = 'cart';
 export class CartService {
   private _subscriptionObservable: Observable<ShoppingCart>;
   private _subscribers: Array<Observer<ShoppingCart>> = new Array<
-    Observer<ShoppingCart>>();
+    Observer<ShoppingCart>
+  >();
   private _products: Product[];
   //TODO: implement storage
   private _storage: Storage;
 
   constructor(
-    private _productService: ProductsService, 
-    private _storageService: LocalStorageService) {
-      this._storage = this._storageService.get();
-      this._products = this._productService.getProducts();
-      this._subscriptionObservable = new Observable<ShoppingCart>(
-        (observer: Observer<ShoppingCart>) => {
-          this._subscribers.push(observer);
-          observer.next(this.retrieve());
-          return () => {
-            this._subscribers = this._subscribers.filter(
-              (obs) => obs !== observer
-            );
-          };
-       }
+    private _productService: ProductsService,
+    private _storageService: LocalStorageService
+  ) {
+    this._storage = this._storageService.get();
+    this._products = this._productService.getProducts();
+    this._subscriptionObservable = new Observable<ShoppingCart>(
+      (observer: Observer<ShoppingCart>) => {
+        this._subscribers.push(observer);
+        observer.next(this.retrieve());
+        return () => {
+          this._subscribers = this._subscribers.filter(
+            (obs) => obs !== observer
+          );
+        };
+      }
     );
   }
 
@@ -53,6 +55,7 @@ export class CartService {
     }
 
     item.quantity += quantity;
+    //item.quantity = 0;
     //cart.items = cart.items.filter((cartItem) => cartItem.quantity > 0);
 
     this.calculateCart(cart);
@@ -70,7 +73,7 @@ export class CartService {
       .reduce((previous, current) => previous + current, 0);
   }
 
-  // The method `retrieve` , that is the key for the update of the cart information now 
+  // The method `retrieve` , that is the key for the update of the cart information now
   // also incorporates the storage service.
   private retrieve(): ShoppingCart {
     const cart = new ShoppingCart();
